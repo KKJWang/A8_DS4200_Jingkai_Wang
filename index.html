@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+    .error {
+        color: red;
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+      width: 80%;
+      border-collapse: collapse;
+      margin: 0 auto;
+      border: 3px solid #333;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    table, th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    </style>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+
+    <title>Lecture Visualization Website</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <!-- Link to external CSS file-->
+    <link rel="stylesheet" href="A8.css">
+</head>
+
+<body>
+<!-- Customizing the navigation bar -->
+    <nav id="mainNavbar" class="navbar navbar-light navbar-expand-md py-0  fixed-top">
+
+<!-- Adding the College name to the navigation bar -->
+        <a href="https://www.khoury.northeastern.edu" class="navbar-brand"><img src=logo.png style="width:180px;height:60px"/></a>
+
+<!-- Adding navigation tab names to the navigation bar. This is done as an unordered list. Each list element is a navigation bar element. For each, I added an <a></a> tag which will be used to direct to the appropriate section on click. You can add new items incase you want to add a new section in your webpage by simply copy pasting one of the list items. Make sure to correctly link it to the section that it corresponds to.-->
+        <div class="collapse navbar-collapse" id="navLinks">
+
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a href="#A8" class="nav-link">A8</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#Context" class="nav-link">Context</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#Data encodings" class="nav-link">Data encodings</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#Data Link" class="nav-link">Data Link</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#Observation and Insights" class="nav-link">Observation and Insights</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#Infographic" class="nav-link">Infographic</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+<!-- Section 1 -->
+    <section id="A8" class="container-fluid px-0 py-0" style="margin-top:150px">
+        <div>
+                  <h1 style="text-align:center; font-weight: bold;">A8</h1>
+                  <h1 style="text-align:center; font-weight: bold;">Jingkai (Kenny) Wang</h1>
+            </div>
+    </section>
+
+<!-- Section 2 -->
+
+        <section id="Context" class="container-fluid px-0" style="margin-top:50px"></section>
+        <div>
+            <h1 style="text-align:center">Context</h1>
+            <p style="text-align:center; font-size:20px; margin-left:auto; margin-right:auto; width:50%;text-align: justify;">COVID-19 is a disease caused by a novel coronavirus strain, which is known to cause respiratory infections in people. The outbreak of this new strain was first identified in December 2019 in Wuhan, China, where a pneumonia outbreak of unknown origin emerged.</p>
+            <p style="text-align:center; font-size:20px; margin-left:auto; margin-right:auto; width:50%;text-align: justify;">In the wake of the COVID-19 pandemic, there has been a significant amount of discussion on social media and news outlets about the importance of getting vaccinated against the disease. With the number of COVID-19 cases increasing rapidly, this dataset provides Twitter tweets containing the hashtag #CovidVaccine.</p>
+            <p style="text-align:center; font-size:20px; margin-left:auto; margin-right:auto; width:50%;text-align: justify;">This data set can be utilized to delve into the topics that utilize the hashtag, analyze the geographical distribution, assess sentiments, and examine trends.</p>
+        </div>
+    </section>
+
+    <!-- Section 3: Data Encoding -->
+    <section id="Data encodings" class="container-fluid px-0" style="margin-top:50px"></section>
+        <div>
+            <h3>Data encodings</h3>
+            <table>
+        <thead>
+            <tr>
+                <th>Column Name</th>
+                <th>Data Encoding</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>user_name</td>
+                <td>The name of the user, as they've defined it</td>
+            </tr>
+            <tr>
+                <td>user_location</td>
+                <td>The user-defined location for this account's profile</td>
+            </tr>
+            <tr>
+                <td>user_description</td>
+                <td>The user-defined UTF-8 string describing their account</td>
+            </tr>
+            <tr>
+                <td>user_created</td>
+                <td>Time and date, when the account was created</td>
+            </tr>
+            <tr>
+                <td>user_followers</td>
+                <td>The number of followers an account currently has</td>
+            </tr>
+            <tr>
+                <td>user_friends</td>
+                <td>The number of friends an account currently has</td>
+            </tr>
+            <tr>
+                <td>user_favourites</td>
+                <td>The number of favorites a account currently has</td>
+            </tr>
+            <tr>
+                <td>user_verified</td>
+                <td>When true, indicates that the user has a verified account</td>
+            </tr>
+            <tr>
+                <td>date</td>
+                <td>UTC time and date when the Tweet was created</td>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>The actual UTF-8 text of the Tweet</td>
+            </tr>
+            <tr>
+                <td>hashtags</td>
+                <td>All the other hashtags posted in the tweet along with #CovidVaccine</td>
+            </tr>
+            <tr>
+                <td>source</td>
+                <td>Utility used to post the Tweet, for example, web</td>
+            </tr>
+            <tr>
+                <td>is_retweet</td>
+                <td>Indicates whether this Tweet has been Retweeted</td>
+            </tr>
+        </tbody>
+    </table>
+        </div>
+    </section>
+
+    <div id="Context"></div>
+
+    <!-- Section 5: data link-->
+    <section id="Data Link" class="container-fluid px-0" style="margin-top:50px"></section>
+        <div>
+            <h1 style="text-align:center">Data Link</h1>
+            <a style="margin-left: 460px; font-size: 30px; color: yellow" href="https://www.kaggle.com/datasets/kaushiksuresh147/covidvaccine-tweets" target="_blank">COVID Vaccine Tweets Dataset</a>
+        </div>
+    </section>
+
+
+    <!-- Section 6: Motivation-->
+    <section id="Observation and Insights" class="container-fluid px-0" style="margin-top:50px"></section>
+        <div>
+            <h2 style="text-align:center">Observation and Insights</h2>
+            <h2>- Top locations of the tweets</h2>
+    <ol style="text-align: center; font-weight: bold; margin-left:auto; margin-right:auto; width:60%; text-align: justify;">
+        <li>1. India: 8.70%</li>
+        <li>2. United States: 7.43%</li>
+        <li>3. England: 5.96%</li>
+     </ol>
+    <p style="text-align:center; font-size:20px; margin-left:auto; margin-right:auto; width:80%;text-align: justify;">India has the highest percentage of tweets about Covid-19, which may be due to the severity of the outbreak in the country. India has been one of the hardest-hit countries by the pandemic, with high case numbers and a struggling healthcare system, which could be driving conversations and concerns on social media.</p>
+    <p style="text-align:center; font-size:20px; margin-left:auto; margin-right:auto; width:80%;text-align: justify;">The United States, despite having a lower percentage of tweets than India, still has a significant presence on social media regarding Covid-19. This could be due to a number of factors, including the size of the country, the impact of the pandemic on the economy and daily life, and the political climate around Covid-19.</p>
+    <p style="text-align:center; font-size:20px; margin-left:auto; margin-right:auto; width:80%;text-align: justify;">England, with the third-highest percentage of Covid-19 tweets, may be reflective of the situation in the UK, which has seen several waves of the pandemic and significant public health measures such as lockdowns and vaccine rollouts.</p>
+    <p style="text-align:center; font-size:20px; margin-left:auto; margin-right:auto; width:80%;text-align: justify;">Overall, the high percentage of tweets about Covid-19 in these locations suggests that the pandemic continues to be a major concern and topic of discussion around the world, with people using social media to share information, express their opinions, and seek support or guidance.</p>
+
+    <h2>- Top source of the tweets</h2>
+    <ol style="text-align: center; font-weight: bold; margin-left:auto; margin-right:auto; width:60%; text-align: justify;">
+        <li>1. Twitter Web App</li>
+        <li>2. Twitter for iPhone</li>
+        <li>3. Twitter for Android</li>
+    </ol>
+    <p style="text-align:center; font-size:20px; margin-left:auto; margin-right:auto; width:80%;text-align: justify;">The Twitter Web App is the top source of tweets about Covid-19, which suggests that many people are accessing and engaging with Covid-related content on Twitter from their desktop or laptop computers. This may reflect the fact that people are spending more time at home during the pandemic, and therefore are more likely to use their computers to access social media.</p>
+    <p style="text-align:center; font-size:20px; margin-left:auto; margin-right:auto; width:80%;text-align: justify;">Twitter for iPhone is the second most popular source of tweets about Covid-19, indicating that many people are using their mobile devices to engage with Covid-related content on Twitter. This may reflect the fact that people are increasingly relying on their smartphones for news and information, as well as for staying connected with others during the pandemic.</p>
+    <p style="text-align:center; font-size:20px; margin-left:auto; margin-right:auto; width:80%;text-align: justify;">Twitter for Android is the third most popular source of tweets about Covid-19, which suggests that Android smartphone users are also engaging with Covid-related content on Twitter. This may reflect the fact that Android is a popular mobile operating system used by many people around the world.</p>
+    <p style="text-align:center; font-size:20px; margin-left:auto; margin-right:auto; width:80%;text-align: justify;">Overall, the fact that these three sources make up the majority of Covid-related tweets suggests that Twitter is a popular platform for people to share and consume information about the pandemic, regardless of the device they are using. It also suggests that people are actively using social media to stay informed and engaged with the ongoing situation, as well as to share their thoughts and experiences with others.</p>
+
+    <h2>- Top hashtags</h2>
+    <ol style="text-align: center; font-weight: bold; margin-left:auto; margin-right:auto; width:60%; text-align: justify;">
+        <li>1. Covid vaccine: 290,000</li>
+        <li>2. Covid19: 70,000</li>
+        <li>3. Covid: 20,000</li>
+    </ol>
+    <p style="text-align:center; font-size:20px; margin-left:auto; margin-right:auto; width:80%;text-align: justify;">The hashtag "#Covid vaccine" is by far the most popular hashtag used in Covid-related tweets, with 290,000 uses. This suggests that people are highly interested in the development, rollout, and efficacy of Covid vaccines. It also indicates that people are using Twitter to share information and news about vaccines, as well as to express their opinions and concerns about them.</p>
+    <p style="text-align:center; font-size:20px; margin-left:auto; margin-right:auto; width:80%;text-align: justify;">The hashtag "#Covid19" is the second most popular hashtag, with 70,000 uses. This is a general hashtag that encompasses all aspects of the Covid-19 pandemic, including news, updates, personal experiences, and more. Its popularity indicates that people are using Twitter to stay informed about the ongoing situation, as well as to share their own thoughts and experiences related to Covid-19.</p>
+    <p style="text-align:center; font-size:20px; margin-left:auto; margin-right:auto; width:80%;text-align: justify;">The hashtag "#Covid" is the third most popular, with 20,000 uses. This is another general hashtag that can be used to encompass any aspect of the pandemic. Its popularity suggests that people are using Twitter to discuss various topics related to Covid-19, including news updates, personal experiences, and opinions.</p>
+    <p style="text-align:center; font-size:20px; margin-left:auto; margin-right:auto; width:80%;text-align: justify;">Overall, the popularity of these hashtags suggests that Twitter is an important platform for people to discuss and engage with the ongoing Covid-19 pandemic. It indicates that people are using social media to stay informed about the situation, share information and news, express their opinions and concerns, and connect with others during a time of uncertainty and upheaval.</p>
+
+    <h2>- Distribution of text length</h2>
+    <ol style="text-align: center; font-weight: bold; margin-left:auto; margin-right:auto; width:60%; text-align: justify;">
+        <li>Average length of the Covid vaccine tweet: 13.22</li>
+        <li>Median length of the Covid vaccine tweet: 13</li>
+        <li>Interquartile lie between: 8 and 17</li>
+        <li>Min: 0</li>
+        <li>Max: 59</li>
+    </ol>
+    <p style="text-align:center; font-size:20px; margin-left:auto; margin-right:auto; width:80%;text-align: justify;">The average length of a tweet about the Covid vaccine is 13.22 characters. This suggests that people are generally able to convey their thoughts and opinions about the vaccine in a relatively short amount of space, using concise language and abbreviations.</p>
+    <p style="text-align:center; font-size:20px; margin-left:auto; margin-right:auto; width:80%;text-align: justify;">The median length of a Covid vaccine tweet is 13 characters, which is close to the average. This indicates that there is a relatively even distribution of tweet lengths, with a similar number of tweets being shorter or longer than the median.</p>
+    <p style="text-align:center; font-size:20px; margin-left:auto; margin-right:auto; width:80%;text-align: justify;">The interquartile range of tweet lengths for Covid vaccine tweets is between 8 and 17 characters. This means that the middle 50% of tweets about the vaccine have a length between 8 and 17 characters, with the most common length being around 13 characters.</p>
+    <p style="text-align:center; font-size:20px; margin-left:auto; margin-right:auto; width:80%;text-align: justify;">The minimum length of a Covid vaccine tweet is 0 characters, which indicates that some people are able to convey their message or opinion using
+
+        </div>
+    </section>
+
+
+    <!-- Section 7: Inforgraphic-->
+    <section id="Inforgraphic" class="container-fluid px-0" style="margin-top:50px"></section>
+        <div>
+            <h2 style="text-align:center; font-weight:bold;">Infographic<h2>
+        </div>
+    </section>
+        <div id="Infographic">
+            <img style="margin-left:350px; width:50%" src="FACTS of TWEETS ON covid-19.png" alt="Infographic">
+        </div>
+    </div>
+
+
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
